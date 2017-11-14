@@ -1,14 +1,12 @@
-<html>
+{% extends 'base.html' %}
+{% block title %}About Us - {{ block.super }}{% endblock %}
+{% block content %}
+<h1>About Us</h1>
+<p>Hi!</p>
 
-<body>
-    <h1>About US</h1>
-    <p>Hey, this is about us.</p>
-
-    {% if open %}
-    <p>We are currently open!</p>
-    {% else %}
-    <p>We are currently closed! Feel free to contact us!</p>
-    {% endif %} 
-</body>
-
-</html>
+{% if open %}
+<p>We are currently open!</p>
+{% else %}
+<p>We are currently closed! Feel free to contact us!</p>
+{% endif %}
+{% endblock %}
