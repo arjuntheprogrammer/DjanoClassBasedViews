@@ -3,6 +3,12 @@
 <body>
     <h1>About US</h1>
     <p>Hey, this is about us.</p>
+
+    {% if open %}
+    <p>We are currently open!</p>
+    {% else %}
+    <p>We are currently closed! Feel free to contact us!</p>
+    {% endif %} 
 </body>
 
 </html>
