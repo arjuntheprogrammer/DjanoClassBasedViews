@@ -7,6 +7,9 @@ from django.utils.timezone import now
 from django.views.generic import FormView, TemplateView
 from django.core.urlresolvers import reverse_lazy
 from .forms import ContactForm
+from django.contrib.auth.mixins import LoginRequiredMixin
+
+
 class AboutUsView(TemplateView):
     template_name = 'about_us.html'
 
@@ -50,3 +53,8 @@ class ContactView(FormView):
         # )
         # email.send()
         return super(ContactView, self).form_valid(form)
+
+
+class SecretView(LoginRequiredMixin, TemplateView):
+    template_name = "secret.html"
+
